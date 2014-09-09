@@ -46,7 +46,9 @@ alias cwm="python $HOME/system/scripts/cwm/cwm"
 # Vim
 #
 
-alias vim="gvim -v"
+if type gvim > /dev/null; then
+    alias vim="gvim -v"
+fi
 
 #
 # Todo.txt
