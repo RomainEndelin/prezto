@@ -1,7 +1,7 @@
 #
 # Executes commands at login pre-zshrc.
 #
-# Authors:
+# Original Author:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
@@ -9,17 +9,21 @@
 # Browser
 #
 
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-fi
+export BROWSER='firefox'
 
 #
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
+
+#
+# Terminal
+#
+
+export TERMINAL='urxvt'
 
 #
 # Language
@@ -41,9 +45,23 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
+export EYE_HOME=$HOME/system/scripts/euler
+export ALCHEMY_BIN=$HOME/system/scripts/alchemy2/trunk/bin
+export USER_BIN=$HOME/system/scripts
+
 # Set the list of directories that Zsh searches for programs.
+# TODO check order
 path=(
   /usr/local/{bin,sbin}
+  /usr/{bin,sbin}
+  /{bin,sbin}
+  $USER_BIN
+  $HOME/.local/bin
+  $HOME/.gem/ruby/2.1.0/bin
+  /usr/bin/core_perl
+  /usr/lib/qt4/bin
+  $EYE_HOME
+  $ALCHEMY_BIN
   $path
 )
 
@@ -74,4 +92,3 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
-
