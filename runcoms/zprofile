@@ -45,7 +45,6 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
-export EYE_HOME=$HOME/system/scripts/euler
 export ALCHEMY_BIN=$HOME/system/scripts/alchemy2/trunk/bin
 export USER_BIN=$HOME/system/scripts
 
@@ -60,7 +59,6 @@ path=(
   $HOME/.gem/ruby/2.1.0/bin
   /usr/bin/core_perl
   /usr/lib/qt4/bin
-  $EYE_HOME
   $ALCHEMY_BIN
   $path
 )
