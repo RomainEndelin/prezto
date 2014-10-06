@@ -51,20 +51,15 @@ if type gvim > /dev/null; then
 fi
 
 #
-# Todo.txt
-#
-
-export TODOTXT_DEFAULT_ACTION=top
-export TODO_DIR=$HOME/system/todo
-alias tw="todo.sh -d $TODO_DIR/work/work.cfg"
-alias tp="todo.sh -d $TODO_DIR/personal/personal.cfg"
-alias t="rm -f $TODO_DIR/todo.txt; rm -f $TODO_DIR/done.txt; cat $TODO_DIR/personal/todo.txt $TODO_DIR/work/todo.txt > $TODO_DIR/todo.txt; cat $TODO_DIR/personal/done.txt $TODO_DIR/work/done.txt > $TODO_DIR/done.txt; todo.sh -d $TODO_DIR/all.cfg"
-
-#
 # Fasd
 #
 alias jv="fasd -f -e vim"
 alias jo="fasd -f -e xdg-open"
+
+#
+# Task warrior
+#
+alias t=task
 
 #
 # Advanced cp
