@@ -70,7 +70,9 @@ alias jo="fasd -f -e xdg-open"
 # Advanced cp
 #
 
-alias cp='acp -g'
+if type acp > /dev/null; then
+    alias cp='acp -g'
+fi
 
 #
 # Non-interactive rm
