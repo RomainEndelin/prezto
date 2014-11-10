@@ -23,7 +23,7 @@ export PAGER='less'
 # Terminal
 #
 
-export TERMINAL='urxvt'
+export TERMINAL='termite'
 
 #
 # Language
@@ -45,8 +45,9 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
-export ALCHEMY_BIN=$HOME/system/scripts/alchemy2/trunk/bin
-export USER_BIN=$HOME/system/scripts
+export USER_BIN=$HOME/.bin
+export ANDROID_TOOLS=$HOME/phd/playground/2014/phonegap/android-sdk/adt-bundle-linux-x86_64-20140702/sdk/tools
+export ANDROID_PLATFORM_TOOLS=$HOME/phd/playground/2014/phonegap/android-sdk/adt-bundle-linux-x86_64-20140702/sdk/platform-tools
 
 # Set the list of directories that Zsh searches for programs.
 # TODO check order
@@ -59,7 +60,8 @@ path=(
   $HOME/.gem/ruby/2.1.0/bin
   /usr/bin/core_perl
   /usr/lib/qt4/bin
-  $ALCHEMY_BIN
+  $ANDROID_TOOLS
+  $ANDROID_PLATFORM_TOOLS
   $path
 )
 
