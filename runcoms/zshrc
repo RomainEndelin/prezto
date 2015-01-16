@@ -59,9 +59,7 @@ alias jo="fasd -f -e xdg-open"
 #
 # Task warrior
 #
-alias t="task"
-alias gtd="gtd-warrior"
-alias wiki="vim +VimwikiIndex"
+alias t="todo.sh"
 
 #
 # Advanced cp
