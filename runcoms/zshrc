@@ -57,9 +57,10 @@ alias jv="fasd -f -e vim"
 alias jo="fasd -f -e xdg-open"
 
 #
-# Task warrior
+# Todo.txt
 #
 alias t="todo.sh"
+alias tv="vim $HOME/braindump/tasks/todo.txt"
 
 #
 # Advanced cp
