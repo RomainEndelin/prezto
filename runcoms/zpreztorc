@@ -35,6 +35,8 @@ zstyle ':prezto:load' pmodule \
   'archive' \
   'pacman' \
   'python' \
+  'ruby' \
+  'rails' \
   'node' \
   'completion' \
   'tmux' \
