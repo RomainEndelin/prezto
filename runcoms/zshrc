@@ -92,3 +92,5 @@ alias v.add2virtualenv='add2virtualenv'
 alias v.cdsitepackages='cdsitepackages'
 alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
