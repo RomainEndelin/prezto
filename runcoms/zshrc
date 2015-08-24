@@ -80,6 +80,11 @@ fi
 alias rmf='rm -f'
 
 #
+# Working on integration
+#
+function on() { noglob curl -X POST --data-urlencode "task=$*" https://api.workingon.co/hooks/incoming?token=0244f71531a5292a0e5744942cef622446a33da391b6f4eb91c1381a8e715aee >/dev/null 2>&1 echo "Task sent." }
+
+#
 # Virtualenv
 #
 
