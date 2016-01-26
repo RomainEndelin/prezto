@@ -49,9 +49,7 @@ alias cwm="python $HOME/system/scripts/cwm/cwm"
 # Vim
 #
 
-if type gvim > /dev/null; then
-    alias vim="gvim -v"
-fi
+alias vim=nvim
 
 #
 # Fasd
@@ -99,3 +97,25 @@ alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+fzf-locate-widget() {
+  local selected
+  if selected=$(locate / | fzf -q "$LBUFFER"); then
+    LBUFFER=$selected
+  fi
+  zle redisplay
+}
+zle     -N    fzf-locate-widget
+bindkey '^l' fzf-locate-widget
+
+z() {
+  local dir
+  dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}
+alias j=z
+
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--inline-info"
