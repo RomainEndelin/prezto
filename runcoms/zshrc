@@ -110,11 +110,22 @@ fzf-locate-widget() {
 zle     -N    fzf-locate-widget
 bindkey '^l' fzf-locate-widget
 
+# TODO: Refactor
 z() {
   local dir
   dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
+zv() {
+  local file
+  file="$(fasd -Rlf "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
+}
+zo() {
+  local file
+  file="$(fasd -Rlf "$1" | fzf -1 -0 --no-sort +m)" && xdg-open "${file}" || return 1
+}
 alias j=z
+alias jv=zv
+alias jo=zo
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
